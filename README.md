@@ -1,4 +1,4 @@
-<p align="center"><img src="https://s3-us-west-1.amazonaws.com/allge.us/logopigeonr.svg" width="500" style=""/></p>
+<p align="center"><img src="https://s3-us-west-1.amazonaws.com/allge.us/logo_pigeon.svg" width="500" style=""/></p>
 
 # Pigeon
 
