@@ -1,4 +1,4 @@
-<img src="https://s3-us-west-1.amazonaws.com/allge.us/logopigeonr.svg" width="500"/>
+<center><img src="https://s3-us-west-1.amazonaws.com/allge.us/logopigeonr.svg" width="500"/></center>
 # Pigeon
 
 Pigeon is a simple cloud home surveillance camera project based on the new Raspberry Pi Zero W platform. It uses a custom designed 3D printed enclosure and wall mount.
