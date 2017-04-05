@@ -25,14 +25,14 @@ CONF_BUILD='conf_builder.conf'
 
 echo "Starting Pigeon installation" &&
 echo "Updating..." &&
-# sudo apt-get update &&
-# sudo apt-get dist-upgrade &&
+sudo apt-get update &&
+sudo apt-get dist-upgrade &&
 echo "Installing Motion detection software" &&
-# wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi_jessie_motion_4.0.1-1_armhf.deb &&
-# sudo apt-get install gdebi-core &&
-# sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
+wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi_jessie_motion_4.0.1-1_armhf.deb &&
+sudo apt-get install gdebi-core &&
+sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
 echo "Installing Dropbox-Uploader" &&
-# ./dropbox_uploader.sh &&
+./dropbox_uploader.sh &&
 echo -n "Do you want to setup a password to access the live feed? Y/n:"
 read password
 if [ $password == "y" ] || [ $password == "Y" ] || [ $password == "Yes" ] || [ $password == "yes" ]
