@@ -97,7 +97,7 @@ Select: Internationalisation Options
 
 Feel free to edit the ```pigeon.conf``` file to change default configurations.
 
-** Some future iterations ideas:
+** Some future iterations ideas: **
 
 Software:
 * Create a web interface for management
