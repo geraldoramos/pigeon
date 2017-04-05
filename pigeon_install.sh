@@ -50,5 +50,6 @@ echo "Installation completed" &&
 echo 'Run: motion -c /home/pi/pigeon/'$CONF_FINAL 'to start' &&
 echo "You can add this command to your rc.local file to run on startup" &&
 echo "Please report any issues to github.com/geraldoramos/pigeon" &&
-echo "========================="
+echo "=========================" &&
+rm -rf $CONF_BUILD
 exit 1
