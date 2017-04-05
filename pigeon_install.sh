@@ -2,6 +2,7 @@
 #
 # Pigeon - Open-source cloud camera
 # http://github.com/geraldoramos/pigeon
+# Download 3D printing files: thingverse....
 #
 # Copyright (C) 2010-2017 Geraldo Ramos <geraldorneto@gmail.com>
 #
@@ -39,7 +40,7 @@ if [ $password == "y" ] || [ $password == "Y" ] || [ $password == "Yes" ] || [ $
   then
     echo -n "Choose a login:"
     read login
-    echo -n "Choose a passwd:"
+    echo -n "Choose a password:"
     read passwd
     sed "/netcam_userpass/s/.*/netcam_userpass $login:$passwd/" $CONF_BUILD > $CONF_FINAL
     rm -rf $CONF_BUILD
@@ -49,6 +50,8 @@ echo "=========================="
 echo "Installation completed" &&
 echo 'Run: motion -c /home/pi/pigeon/'$CONF_FINAL 'to start' &&
 echo "You can add this command to your rc.local file to run on startup" &&
+echo "To watch your live feed, go to:"
+ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | { read ip; echo $ip:8099; }
 echo "Please report any issues to github.com/geraldoramos/pigeon" &&
 echo "=========================" &&
 rm -rf $CONF_BUILD

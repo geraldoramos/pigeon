@@ -10,12 +10,12 @@ The goal of this project is to provide an easy way to setup a basic (yet functio
 
 * Motion detection
 * Integrated with Dropbox for motion detected clips storage (MP4 format)
-* Simple step-by-step configuration wizard
+* Simple step-by-step installation wizard
 * Live streaming in the desktop/mobile browser with remote access capabilities
 * Authentication for live stream visualization
 * 3D printed enclosure
 * Ability to create several integrations using IFTTT (ex: If Pigeon's dropbox folder changes, send an e-mail, SMS, or slack message including the clip file link).
-* Automatically delete local recorded clips after upload to Dropbox
+* Automatically deletes local recorded clips after upload to Dropbox
 
 **Requirements**
 * (optional) 3D Printed enclosure. STL files and instructions available on [ThingVerse](http://www.thingiverse.com/thing:2210410).
@@ -31,7 +31,7 @@ The goal of this project is to provide an easy way to setup a basic (yet functio
 
 ## Getting started
 
-Make sure you have the raspberry PI camera already working, You can try:
+Connect to your Raspberry PI using SSH or using a monitor. Make sure you have the Raspberry PI camera already working, You can test using the following command:
 
 ```bash
 raspistill -o cam.jpg
@@ -51,9 +51,6 @@ git clone https://github.com/geraldoramos/pigeon.git
 cd pigeon
 ```
 
-During the installation process, you will need to create a Dropbox app and get an access token. If you want to have that before starting the installation, go to:
-https://www.dropbox.com/developers/apps/create
-
 When ready, give execution permission to the setup script and run it:
 
 ```bash
@@ -61,17 +58,17 @@ When ready, give execution permission to the setup script and run it:
  ./pigeon_install.sh
 ```
 
-You'll be guided through a wizard in order to install and configure required software
+The installation should take about 10-15 minutes and inputs from you will be necessary towards the process (ex: Dropbox configuration)
 
 ## After Installation
 
-After the installation is completed, you will be able to access the camera live feed by accessing:
+After the installation is completed, you will be able to watch the camera live feed by accessing:
 
 ```
-http://[PI-ADDRESS]:[PORT]
+http://[PI-ADDRESS]:[8099]
 ```
 
-If you want to setup remote access, make sure to port-forward the defined port in your modem admin panel.
+If you want to setup remote access, make sure to setup port forwarding in your modem admin panel.
 
 If everything went fine, you will start seeing MP4 clips being saved on your Dropbox folder when motion events are triggered.
 
@@ -82,7 +79,7 @@ sudo nano /etc/rc.local
 Add the following command below the comment, but leave the line exit 0 at the end, then save the file and exit
 
 ```
-motion -c /home/pi/pigeon/motion.conf &
+motion -c /home/pi/pigeon/pigeon.conf &
 ```
 
 To finalize, make sure you are using the right timezone, so the camera clips date will make sense to you.
@@ -93,15 +90,15 @@ Select: Internationalisation Options
 
 ```
 
-## Customizations
+## Current stage
 
-Feel free to edit the ```pigeon.conf``` file to change default configurations.
+This project is very early stage. You can edit the ```pigeon.conf``` file to change default configurations and make it more suitable for your needs.
 
 **Some future iteration ideas:**
 
 Software:
 * Create a web interface for management
-* Integrate remote access (proxy)
+* Provide remote access without port forwarding
 
 Hardware:
 * Include LED's that turns on when motion is detected

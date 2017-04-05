@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #
-# This files is from the Dropbox Uploader project
+# Pigeon - Bundle
+#
+# This files is originally from the Dropbox Uploader project
 #
 # Dropbox Uploader
 #
