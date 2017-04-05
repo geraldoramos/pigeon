@@ -19,7 +19,7 @@ The goal of this project is to provide an easy way to setup a basic (yet functio
 
 **Requirements**
 * (optional) 3D Printed enclosure. STL files and instructions available on [ThingVerse](http://www.thingiverse.com/thing:2210410).
-* A Rasberry Pi Zero W running Raspbian and connected to the internet: [Buy it][829f44e8]
+* A Rasberry Pi Zero W running Raspbian and connected to the internet. The regular (no-wifi) Raspberry PI Zero also works, but will require a usb wifi doongle that will stay out of the designed enclosure: [Buy a Raspberry PI Zero][829f44e8]
 * A Raspberry Pi camera: [Buy generic version][09e7e3d1] or [Buy official version][09e7e3d1]
 * (optional) A long micro-usb power cable: [Buy it](https://www.aliexpress.com/item/1-2-3-5m-10ft-90-degree-Angle-Long-Micro-USB-Cable-20cm-Sync-data-Charging/32794612542.html?spm=2114.01010208.3.12.Xj3wx5&ws_ab_test=searchweb0_0,searchweb201602_4_10065_10130_10068_10136_10137_10138_10060_10062_10141_10056_10055_10054_10059_10099_129_10103_10102_10096_10148_10052_10053_10050_10107_10142_10051_10143_10084_10083_10119_10080_10082_10081_10110_10111_10112_10113_10114_10037_10032_10078_10079_10077_10073_10070_10123_10120_10124-10120,searchweb201603_6,afswitch_1_afChannel,ppcSwitch_7,single_sort_0_default&btsid=fc05fbd8-0d8a-47c8-b643-02df18983f6f&algo_expid=bb5c67b9-9680-48f5-8c33-d24c88072ce4-1&algo_pvid=bb5c67b9-9680-48f5-8c33-d24c88072ce4)
 
@@ -101,7 +101,7 @@ Software:
 * Provide remote access without port forwarding
 
 Hardware:
-* Include LED's that turns on when motion is detected
+* Incorporate LEDs that will turn on when motion is detected
 * Incorporate a servo in the design to pan or tilt the camera remotely
 
 
