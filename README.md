@@ -6,6 +6,8 @@ Pigeon is a simple cloud home surveillance camera project that uses the new Rasp
 
 The goal of this project is to provide an easy way to setup a basic (yet functional) cloud camera at a very low cost (~$20 total)
 
+![](https://s3-us-west-1.amazonaws.com/allge.us/pigeon.gif)
+
 **Features**
 
 * Motion detection
@@ -68,7 +70,7 @@ After the installation is completed, you will be able to watch the camera live f
 http://[PI-ADDRESS]:[8099]
 ```
 
-If you want to setup remote access, make sure to setup port forwarding in your modem admin panel.
+If you want to setup remote access, make sure to setup port forwarding in your modem admin panel (port 8099 to your Raspberry IP.)
 
 If everything went fine, you will start seeing MP4 clips being saved on your Dropbox folder when motion events are triggered.
 

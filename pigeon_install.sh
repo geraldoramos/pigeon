@@ -2,7 +2,7 @@
 #
 # Pigeon - Open-source cloud camera
 # http://github.com/geraldoramos/pigeon
-# Download 3D printing files: thingverse....
+# Download 3D printing (STL) files on Thingverse.com
 #
 # Copyright (C) 2010-2017 Geraldo Ramos <geraldorneto@gmail.com>
 #
@@ -23,17 +23,19 @@
 CONF_FINAL='pigeon.conf'
 cp $CONF_FINAL 'conf_builder.conf'
 CONF_BUILD='conf_builder.conf'
+cp $CONF_FINAL 'conf_builder2.conf'
+CONF_BUILD2='conf_builder2.conf'
 
 echo "Starting Pigeon installation" &&
 echo "Updating..." &&
-sudo apt-get update &&
-sudo apt-get dist-upgrade &&
+# sudo apt-get update &&
+# sudo apt-get dist-upgrade &&
 echo "Installing Motion detection software" &&
-wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi_jessie_motion_4.0.1-1_armhf.deb &&
-sudo apt-get install gdebi-core &&
-sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
+# wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi_jessie_motion_4.0.1-1_armhf.deb &&
+# sudo apt-get install gdebi-core &&
+# sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
 echo "Installing Dropbox-Uploader" &&
-./dropbox_uploader.sh &&
+# sudo ./dropbox_uploader.sh &&
 echo -n "Do you want to setup a password to access the live feed? Y/n:"
 read password
 if [ $password == "y" ] || [ $password == "Y" ] || [ $password == "Yes" ] || [ $password == "yes" ]
@@ -42,17 +44,21 @@ if [ $password == "y" ] || [ $password == "Y" ] || [ $password == "Yes" ] || [ $
     read login
     echo -n "Choose a password:"
     read passwd
-    sed "/netcam_userpass/s/.*/netcam_userpass $login:$passwd/" $CONF_BUILD > $CONF_FINAL
+    sed "/stream_authentication/s/.*/stream_authentication $login:$passwd/" $CONF_BUILD > $CONF_BUILD2 &&
+    sed "/stream_auth_method/s/.*/stream_auth_method 1/" $CONF_BUILD2 > $CONF_FINAL &&
     rm -rf $CONF_BUILD
+    rm -rf $CONF_BUILD2
   fi
-
+# sudo motion -c $CONF_FINAL &&
 echo "=========================="
-echo "Installation completed" &&
-echo 'Run: motion -c /home/pi/pigeon/'$CONF_FINAL 'to start' &&
-echo "You can add this command to your rc.local file to run on startup" &&
-echo "To watch your live feed, go to:"
-ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | { read ip; echo $ip:8099; }
+echo "Installation completed and service started" &&
+echo "You can add the following command to your 'rc.local' file to run on startup:" &&
+echo 'motion -c /home/pi/pigeon/'$CONF_FINAL
+echo "-------------------------"
+echo "You can now watch your live stream at:"
+ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | { read ip; echo http://$ip:8099; }
 echo "Please report any issues to github.com/geraldoramos/pigeon" &&
 echo "=========================" &&
 rm -rf $CONF_BUILD
+rm -rf $CONF_BUILD2
 exit 1
