@@ -6,7 +6,7 @@ Pigeon is a simple cloud home surveillance camera project that uses the new Rasp
 
 The goal of this project is to provide an easy way to setup a basic (yet functional) cloud camera at a very low cost (~$20 total)
 
-![](https://s3-us-west-1.amazonaws.com/allge.us/pigif.gif)
+<p align="center"><img src="https://s3-us-west-1.amazonaws.com/allge.us/pigif.gif" width="600"/></p>
 
 **Features**
 
