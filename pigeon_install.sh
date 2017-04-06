@@ -2,7 +2,7 @@
 #
 # Pigeon - Open-source cloud camera
 # http://github.com/geraldoramos/pigeon
-# Download 3D printing (STL) files on Thingverse.com
+# Download 3D printing (STL) files on http://www.thingiverse.com/thing:2230707
 #
 # Copyright (C) 2010-2017 Geraldo Ramos <geraldorneto@gmail.com>
 #
@@ -28,14 +28,14 @@ CONF_BUILD2='conf_builder2.conf'
 
 echo "Starting Pigeon installation" &&
 echo "Updating..." &&
-# sudo apt-get update &&
-# sudo apt-get dist-upgrade &&
+sudo apt-get update &&
+sudo apt-get dist-upgrade &&
 echo "Installing Motion detection software" &&
-# wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi_jessie_motion_4.0.1-1_armhf.deb &&
-# sudo apt-get install gdebi-core &&
-# sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
+wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi_jessie_motion_4.0.1-1_armhf.deb &&
+sudo apt-get install gdebi-core &&
+sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
 echo "Installing Dropbox-Uploader" &&
-# sudo ./dropbox_uploader.sh &&
+sudo ./dropbox_uploader.sh &&
 echo -n "Do you want to setup a password to access the live feed? Y/n:"
 read password
 if [ $password == "y" ] || [ $password == "Y" ] || [ $password == "Yes" ] || [ $password == "yes" ]
@@ -49,7 +49,7 @@ if [ $password == "y" ] || [ $password == "Y" ] || [ $password == "Yes" ] || [ $
     rm -rf $CONF_BUILD
     rm -rf $CONF_BUILD2
   fi
-# sudo motion -c $CONF_FINAL &&
+sudo motion -c $CONF_FINAL &&
 echo "=========================="
 echo "Installation completed and service started" &&
 echo "You can add the following command to your 'rc.local' file to run on startup:" &&
