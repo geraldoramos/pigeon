@@ -49,6 +49,7 @@ If you have problems, check: https://www.raspberrypi.org/documentation/configura
 Now, clone this repository using git (recommended) in the root of your Raspberry PI home directory:
 
 ```bash
+cd /home/pi
 git clone https://github.com/geraldoramos/pigeon.git
 cd pigeon
 ```
@@ -101,6 +102,7 @@ This project is very early stage. You can edit the ```pigeon.conf``` file to cha
 Software:
 * Create a web interface for management
 * Provide remote access without port forwarding
+* iOS App with push notification
 
 Hardware:
 * Incorporate LEDs that will turn on when motion is detected
@@ -113,8 +115,3 @@ Hardware:
 
 ## License
 Pigeon is distributed under the GNU GENERAL PUBLIC LICENSE (GPL) version 2 or later.
-
-## Donations
-
- If you want to support this project, please consider donating:
- * PayPal: https://paypal.me/GeraldoRamos
