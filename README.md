@@ -18,7 +18,7 @@ The goal of this project is to provide an easy way to setup a basic (yet functio
 * Authentication for live stream visualization
 * 3D printed enclosure
 * Ability to create several integrations using IFTTT (ex: If Pigeon's dropbox folder changes, send an e-mail, SMS, or slack message including the clip file link).
-* Automatically deletes local recorded clips after upload to Dropbox
+* Automatically deletes locally recorded clips after uploading to Dropbox
 
 **Requirements**
 * (optional) 3D Printed enclosure. STL files and instructions available on [ThingiVerse](http://www.thingiverse.com/thing:2230707).
