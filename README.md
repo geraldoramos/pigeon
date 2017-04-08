@@ -115,5 +115,8 @@ Hardware:
 * [Motion-Project](https://github.com/Motion-Project/motion)
 * [Dropbox-Uploader](https://github.com/andreafabrizi/Dropbox-Uploader)
 
+
 ## License
-Pigeon is distributed under the GNU GENERAL PUBLIC LICENSE (GPL) version 2 or later.
+Pigeon is distributed under the GNU GENERAL PUBLIC LICENSE (GPL) version 2 or later
+
+Follow me on [Twitter](http://twitter.com/geraldoramos)
