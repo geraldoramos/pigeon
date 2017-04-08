@@ -123,3 +123,5 @@ Hardware:
 Pigeon is distributed under the GNU GENERAL PUBLIC LICENSE (GPL) version 2 or later
 
 Follow me on [Twitter](http://twitter.com/geraldoramos)
+
+Vote for this project on the [Microcontroller Instructables.com Contest](https://www.instructables.com/id/Pigeon-a-3D-Printed-Cloud-Home-Surveillance-Camera/)
