@@ -2,6 +2,8 @@
 
 # Pigeon
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/geraldoramos/pigeon/blob/master/LICENSE)
+[![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CYZZD39GXUJ3E)
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40geraldoramos)](https://twitter.com/geraldoramos)
 
 Pigeon is a simple cloud home surveillance camera project that uses the new Raspberry Pi Zero W single board computer ($10). It uses a custom designed 3D printed enclosure that fits the board and the camera. A wall mount is also included. The software should work with any Raspberry PI version, but the 3D design is made specifically for the PI Zero W platform.
 
