@@ -110,7 +110,7 @@ Hardware:
 * Incorporate LEDs that will turn on when motion is detected
 * Incorporate a servo in the design to pan or tilt the camera remotely
 
-**Movement detected by the first assembled Pigeon** (backyard squirrel)
+## Movement detected by the first assembled Pigeon (a squirrel)
 ![Squirrer](https://s3-us-west-1.amazonaws.com/allge.us/squirrel.jpg)
 
 
