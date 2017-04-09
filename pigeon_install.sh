@@ -26,12 +26,12 @@ CONF='pigeon.conf'
 
 echo "Starting Pigeon installation" &&
 echo "Updating..." &&
-# sudo apt-get update &&
-# sudo apt-get dist-upgrade &&
+sudo apt-get update &&
+sudo apt-get dist-upgrade &&
 echo "Installing Motion detection software" &&
-# wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi_jessie_motion_4.0.1-1_armhf.deb &&
-# sudo apt-get install gdebi-core &&
-# sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
+wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi_jessie_motion_4.0.1-1_armhf.deb &&
+sudo apt-get install gdebi-core &&
+sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
 echo "Motion installation completed" &&
 sudo sh 'pigeon_modules_init.sh install' &&
 echo -n "Do you want to setup a password to access the live feed? [Y/n]:"
@@ -55,7 +55,7 @@ if [ $port == "y" ] || [ $port == "Y" ] || [ $port == "Yes" ] || [ $port == "yes
   else
   finalport=8099
   fi
-# sudo motion -c $CONF_FINAL &&
+sudo motion -c $CONF_FINAL &&
 echo "=========================="
 echo "Installation completed and service started" &&
 echo "You can add the following command to your 'rc.local' file to run on startup:" &&
