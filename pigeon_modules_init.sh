@@ -6,6 +6,6 @@
 echo "Starting Modules script"
 
 for d in modules/*/ ; do
-  chmod +x './'$d$1'.sh'
-  sudo './'$d$1'.sh' $2
+  chmod +x '/home/pi/pigeon/'$d$1'.sh'
+  sudo '/home/pi/pigeon/'$d$1'.sh' $2
 done
