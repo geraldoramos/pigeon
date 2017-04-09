@@ -33,7 +33,7 @@ wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi
 sudo apt-get install gdebi-core &&
 sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
 echo "Motion installation completed" &&
-chmod +x pigeon_modules_init. &&
+chmod +x pigeon_modules_init.sh &&
 sudo ./pigeon_modules_init.sh install &&
 echo -n "Do you want to setup a password to access the live feed? [Y/n]:"
 read password
