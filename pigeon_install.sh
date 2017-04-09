@@ -55,11 +55,11 @@ if [ $port == "y" ] || [ $port == "Y" ] || [ $port == "Yes" ] || [ $port == "yes
   else
   finalport=8099
   fi
-sudo motion -c $CONF_FINAL &&
+sudo motion -c $CONF &&
 echo "=========================="
 echo "Installation completed and service started" &&
 echo "You can add the following command to your 'rc.local' file to run on startup:" &&
-echo 'motion -c /home/pi/pigeon/'$CONF_FINAL
+echo 'motion -c /home/pi/pigeon/'$CONF
 echo "-------------------------"
 echo "You can now watch your live stream at:"
 ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | { read ip; echo http://$ip:$finalport; }
