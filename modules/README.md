@@ -1,6 +1,6 @@
 # Pigeon Module system
 
-Each module should have a folder that includes the following scripts:
+Each module should be in a separate folder and include the following scripts:
 
 * **install.sh**
 Called during Pigeon installation
