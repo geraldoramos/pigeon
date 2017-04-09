@@ -5,5 +5,5 @@
 echo "Starting Modules script"
 
 for d in modules/*/ ; do
-  sudo sh './'$d$1'.sh' $2
+  sudo './'$d$1'.sh' $2
 done
