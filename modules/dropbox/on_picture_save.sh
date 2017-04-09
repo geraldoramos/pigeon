@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 #Define on_picture_save routine
 

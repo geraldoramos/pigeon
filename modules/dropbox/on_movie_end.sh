@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 #Define on_movie_end routine
 echo "on_movie_end routine for Dropbox"
