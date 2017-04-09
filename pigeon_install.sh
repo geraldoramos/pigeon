@@ -36,7 +36,7 @@ echo "Motion installation completed" &&
 sudo sh pigeon_modules_init.sh install &&
 echo -n "Do you want to setup a password to access the live feed? [Y/n]:"
 read password
-if [ $password == "y" ] || [ $password == "Y" ] || [ $password == "Yes" ] || [ $password == "yes" ]
+if [[ $password == "y" ]] || [[ $password == "Y" ]] || [[ $password == "Yes" ]] || [[ $password == "yes" ]]
   then
     echo -n "Choose a login:"
     read login
@@ -47,7 +47,7 @@ if [ $password == "y" ] || [ $password == "Y" ] || [ $password == "Yes" ] || [ $
   fi
 echo -n "Do you want to setup a different port (default is 8099) for the streaming server?[Y/n]"
 read port
-if [ $port == "y" ] || [ $port == "Y" ] || [ $port == "Yes" ] || [ $port == "yes" ]
+if [[ $port == "y" ]] || [[ $port == "Y" ]] || [[ $port == "Yes" ]] || [[ $port == "yes" ]]
   then
     echo -n "Choose a port (ex: 8033):"
     read finalport
