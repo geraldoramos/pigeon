@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 #
+# Installation script
+#
 # Pigeon - Open-source cloud camera
 # http://github.com/geraldoramos/pigeon
 # Download 3D printing (STL) files on http://www.thingiverse.com/thing:2230707
@@ -20,11 +22,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-CONF_FINAL='pigeon.conf'
-cp $CONF_FINAL 'conf_builder.conf'
-CONF_BUILD='conf_builder.conf'
-cp $CONF_FINAL 'conf_builder2.conf'
-CONF_BUILD2='conf_builder2.conf'
+CONF='pigeon.conf'
 
 echo "Starting Pigeon installation" &&
 echo "Updating..." &&
@@ -34,31 +32,38 @@ echo "Installing Motion detection software" &&
 wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi_jessie_motion_4.0.1-1_armhf.deb &&
 sudo apt-get install gdebi-core &&
 sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
-echo "Installing Dropbox-Uploader" &&
-sudo ./dropbox_uploader.sh &&
-echo -n "Do you want to setup a password to access the live feed? Y/n:"
+echo "Motion installation completed" &&
+chmod +x pigeon_modules_init.sh &&
+sudo ./pigeon_modules_init.sh install &&
+echo -n "Do you want to setup a password to access the live feed? [Y/n]:"
 read password
-if [ $password == "y" ] || [ $password == "Y" ] || [ $password == "Yes" ] || [ $password == "yes" ]
+if [[ $password == "y" ]] || [[ $password == "Y" ]] || [[ $password == "Yes" ]] || [[ $password == "yes" ]]
   then
     echo -n "Choose a login:"
     read login
     echo -n "Choose a password:"
     read passwd
-    sed "/stream_authentication/s/.*/stream_authentication $login:$passwd/" $CONF_BUILD > $CONF_BUILD2 &&
-    sed "/stream_auth_method/s/.*/stream_auth_method 1/" $CONF_BUILD2 > $CONF_FINAL &&
-    rm -rf $CONF_BUILD
-    rm -rf $CONF_BUILD2
+    sudo sed -i -e "/stream_authentication/s/.*/stream_authentication $login:$passwd/" $CONF &&
+    sudo sed -i -e "/stream_auth_method/s/.*/stream_auth_method 1/" $CONF
   fi
-sudo motion -c $CONF_FINAL &&
+echo -n "Do you want to setup a different port (default is 8099) for the streaming server?[Y/n]"
+read port
+if [[ $port == "y" ]] || [[ $port == "Y" ]] || [[ $port == "Yes" ]] || [[ $port == "yes" ]]
+  then
+    echo -n "Choose a port (ex: 8033):"
+    read finalport
+    sudo sed -i -e "/stream_port/s/.*/stream_port $finalport/" $CONF
+  else
+  finalport=8099
+  fi
+sudo motion -c $CONF &&
 echo "=========================="
 echo "Installation completed and service started" &&
 echo "You can add the following command to your 'rc.local' file to run on startup:" &&
-echo 'motion -c /home/pi/pigeon/'$CONF_FINAL
+echo 'motion -c /home/pi/pigeon/'$CONF
 echo "-------------------------"
 echo "You can now watch your live stream at:"
-ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | { read ip; echo http://$ip:8099; }
+ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | { read ip; echo http://$ip:$finalport; }
 echo "Please report any issues to github.com/geraldoramos/pigeon" &&
 echo "=========================" &&
-rm -rf $CONF_BUILD
-rm -rf $CONF_BUILD2
 exit 1
