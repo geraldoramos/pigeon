@@ -6,6 +6,6 @@
 echo "Starting Modules script"
 
 for d in modules/*/ ; do
-  chmod +x $d$1'.sh'
+  chmod +x './'$d$1'.sh'
   sudo './'$d$1'.sh' $2
 done
