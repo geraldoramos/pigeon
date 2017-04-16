@@ -5,7 +5,7 @@
 
 echo "Starting Modules Script"
 
-camera_name='pigeon'
+camera_name=pigeon
 
 for d in modules/*/ ; do
 
@@ -16,7 +16,7 @@ for d in modules/*/ ; do
       if [[ $install == "y" ]] || [[ $install == "Y" ]] || [[ $intall == "Yes" ]] || [[ $install == "yes" ]]
         then
         sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
-        sudo '/home/pi/pigeon/'$d$1'.sh' $2
+        sudo '/home/pi/pigeon/'$d$1'.sh'
         fi
   else
   sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
