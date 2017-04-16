@@ -19,7 +19,7 @@ for d in modules/*/ ; do
         sudo '/home/pi/pigeon/'$d$1'.sh' $2
         fi
   else
-  sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
+  chmod +x '/home/pi/pigeon/'$d$1'.sh'
   sudo '/home/pi/pigeon/'$d$1'.sh' $2 $camera_name
   fi
 
