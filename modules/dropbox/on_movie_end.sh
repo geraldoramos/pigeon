@@ -4,4 +4,4 @@
 
 echo "on_movie_end routine for Dropbox"
 echo $1 $2
-sudo /home/pi/pigeon/modules/dropbox/binaries/dropbox_uploader.sh upload $1 /$2 && rm -rf $1
+sudo /home/pi/pigeon/modules/dropbox/binaries/dropbox_uploader.sh -f /home/pi/pigeon/modules/dropbox/binaries/dropbox.conf upload $1 /$2 && rm -rf $1
