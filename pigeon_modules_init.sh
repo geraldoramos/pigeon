@@ -5,7 +5,7 @@
 
 echo "Starting Modules script"
 
-camera_name='geragol'
+camera_name='pigeon'
 
 for d in modules/*/ ; do
 
