@@ -34,6 +34,7 @@ echo "Installing Motion detection software" &&
 # sudo apt-get install gdebi-core &&
 # sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
 echo "Motion installation completed" &&
+sudo rm -rf ~/.dropbox_uploader
 sudo chmod +x pigeon_modules_init.sh &&
 sudo ./pigeon_modules_init.sh install &&
 echo -n "Please define a name for this Pigeon camera (ex: backyard):"
