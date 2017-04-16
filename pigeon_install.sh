@@ -38,7 +38,7 @@ sudo chmod +x pigeon_modules_init.sh &&
 sudo ./pigeon_modules_init.sh install &&
 echo -n "Please define a name for this Pigeon camera (ex: backyard):"
 read camera_name
-sudo sed -i -e "/camera_name=/s/.*/camera_name='$camera_name" $MODULES &&
+sudo sed -i -e "/camera_name=/s/.*/camera_name='$camera_name/" $MODULES &&
 echo -n "Do you want to setup a password to access the live feed? [Y/n]:"
 read password
 if [[ $password == "y" ]] || [[ $password == "Y" ]] || [[ $password == "Yes" ]] || [[ $password == "yes" ]]
