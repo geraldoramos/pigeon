@@ -23,8 +23,9 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
 CONF='pigeon.conf'
+MODULES='pigeon_modules_init.sh'
 
-echo "Starting Pigeon installation" &&
+echo "Starting Pigeon installation, please type your PI password when prompted" &&
 echo "Updating..." &&
 sudo apt-get update &&
 sudo apt-get dist-upgrade &&
@@ -33,8 +34,11 @@ wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi
 sudo apt-get install gdebi-core &&
 sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
 echo "Motion installation completed" &&
-chmod +x pigeon_modules_init.sh &&
+sudo chmod +x pigeon_modules_init.sh &&
 sudo ./pigeon_modules_init.sh install &&
+echo -n "Please define a name for this Pigeon camera (ex: backyard):"
+read camera_name
+sudo sed -i -e "/camera_name=/s/.*/camera_name=$camera_name/" $MODULES &&
 echo -n "Do you want to setup a password to access the live feed? [Y/n]:"
 read password
 if [[ $password == "y" ]] || [[ $password == "Y" ]] || [[ $password == "Yes" ]] || [[ $password == "yes" ]]

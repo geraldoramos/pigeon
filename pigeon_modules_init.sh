@@ -3,7 +3,9 @@
 # This will run module-specific routines
 # Receives the type of argument to run (ex: install, on_movie_end or on_picture_save).
 
-echo "Starting Modules script"
+echo "Starting Modules Script"
+
+camera_name=pigeon
 
 for d in modules/*/ ; do
 
@@ -13,12 +15,12 @@ for d in modules/*/ ; do
     read install
       if [[ $install == "y" ]] || [[ $install == "Y" ]] || [[ $intall == "Yes" ]] || [[ $install == "yes" ]]
         then
-        chmod +x '/home/pi/pigeon/'$d$1'.sh'
-        sudo '/home/pi/pigeon/'$d$1'.sh' $2
+        sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
+        sudo '/home/pi/pigeon/'$d$1'.sh'
         fi
   else
-  chmod +x '/home/pi/pigeon/'$d$1'.sh'
-  sudo '/home/pi/pigeon/'$d$1'.sh' $2
+  sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
+  sudo '/home/pi/pigeon/'$d$1'.sh' $2 $camera_name
   fi
 
 done
