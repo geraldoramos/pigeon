@@ -15,11 +15,11 @@ for d in modules/*/ ; do
     read install
       if [[ $install == "y" ]] || [[ $install == "Y" ]] || [[ $intall == "Yes" ]] || [[ $install == "yes" ]]
         then
-        chmod +x '/home/pi/pigeon/'$d$1'.sh'
+        sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
         sudo '/home/pi/pigeon/'$d$1'.sh' $2
         fi
   else
-  chmod +x '/home/pi/pigeon/'$d$1'.sh'
+  sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
   sudo '/home/pi/pigeon/'$d$1'.sh' $2 $camera_name
   fi
 
