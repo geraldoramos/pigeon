@@ -30,9 +30,7 @@ echo "Updating..." &&
 sudo apt-get update &&
 sudo apt-get dist-upgrade &&
 echo "Installing Motion detection software" &&
-wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi_jessie_motion_4.0.1-1_armhf.deb &&
-sudo apt-get install gdebi-core &&
-sudo gdebi pi_jessie_motion_4.0.1-1_armhf.deb &&
+sudo apt-get install motion
 echo "Motion installation completed" &&
 sudo chmod +x pigeon_modules_init.sh &&
 sudo ./pigeon_modules_init.sh install &&
