@@ -6,6 +6,7 @@
 echo "Starting Modules Script"
 
 camera_name=pigeon
+conf_file=/home/pi/pigeon/modules_enabled.conf
 
 for d in modules/*/ ; do
 
@@ -17,11 +18,11 @@ for d in modules/*/ ; do
         then
         sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
         sudo '/home/pi/pigeon/'$d$1'.sh'
-        echo $d >> enabled.conf
+        echo $d >> $conf_file
         fi
   elif [[ $1 == "on_movie_end" ]] || [[ $1 == "on_picture_save" ]]
     then
-    if grep -Fxq "$d" enabled.conf
+    if grep -Fxq "$d" $conf_file
       then
       sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
       sudo '/home/pi/pigeon/'$d$1'.sh' $2 $camera_name
