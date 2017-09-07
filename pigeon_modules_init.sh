@@ -16,16 +16,16 @@ for d in /home/pi/pigeon/modules/*/ ; do
     read install
       if [[ $install == "y" ]] || [[ $install == "Y" ]] || [[ $intall == "Yes" ]] || [[ $install == "yes" ]]
         then
-        sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
-        sudo '/home/pi/pigeon/'$d$1'.sh'
+        sudo chmod +x $d$1'.sh'
+        sudo $d$1'.sh'
         echo $d >> $conf_file
         fi
   elif [[ $1 == "on_movie_end" ]] || [[ $1 == "on_picture_save" ]]
     then
     if grep -Fxq "$d" $conf_file
       then
-      sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
-      sudo '/home/pi/pigeon/'$d$1'.sh' $2 $camera_name
+      sudo chmod +x $d$1'.sh'
+      sudo $d$1'.sh' $2 $camera_name
       echo "Finished $1 routine for $d"
       fi
   else
