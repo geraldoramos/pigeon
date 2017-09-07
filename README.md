@@ -13,7 +13,6 @@ The goal of this project is to provide an easy way to setup a basic (yet functio
 <p align="center"><img src="https://s3-us-west-1.amazonaws.com/allge.us/pigif.gif" width="600"/></p>
 
 
-
 **Features**
 
 * Motion detection
