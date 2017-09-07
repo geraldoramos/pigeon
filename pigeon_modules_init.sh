@@ -6,8 +6,9 @@
 echo "Starting Modules Script"
 
 camera_name=pigeon
+conf_file=/home/pi/pigeon/modules_enabled.conf
 
-for d in modules/*/ ; do
+for d in /home/pi/pigeon/modules/*/ ; do
 
   if [[ $1 == 'install' ]]
     then
@@ -15,12 +16,22 @@ for d in modules/*/ ; do
     read install
       if [[ $install == "y" ]] || [[ $install == "Y" ]] || [[ $intall == "Yes" ]] || [[ $install == "yes" ]]
         then
-        sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
-        sudo '/home/pi/pigeon/'$d$1'.sh'
+        sudo chmod +x $d$1'.sh'
+        sudo $d$1'.sh'
+        echo $d >> $conf_file
         fi
+  elif [[ $1 == "on_movie_end" ]] || [[ $1 == "on_picture_save" ]]
+    then
+    if grep -Fxq "$d" $conf_file
+      then
+      sudo chmod +x $d$1'.sh'
+      sudo $d$1'.sh' $2 $camera_name
+      echo "Finished $1 routine for $d"
+      fi
   else
-  sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
-  sudo '/home/pi/pigeon/'$d$1'.sh' $2 $camera_name
+    echo "$1 is not a recognized command"    
   fi
 
 done
+
+echo "Ended Modules Script" 
