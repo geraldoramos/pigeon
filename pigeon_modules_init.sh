@@ -17,10 +17,20 @@ for d in modules/*/ ; do
         then
         sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
         sudo '/home/pi/pigeon/'$d$1'.sh'
+        echo $d >> enabled.conf
         fi
+  elif [[ $1 == "on_movie_end" ]] || [[ $1 == "on_picture_save" ]]
+    then
+    if grep -Fxq "$d" enabled.conf
+      then
+      sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
+      sudo '/home/pi/pigeon/'$d$1'.sh' $2 $camera_name
+      echo "Finished $1 routine for $d"
+      fi
   else
-  sudo chmod +x '/home/pi/pigeon/'$d$1'.sh'
-  sudo '/home/pi/pigeon/'$d$1'.sh' $2 $camera_name
+    echo "$1 is not a recognized command"    
   fi
 
 done
+
+echo "Ended Modules Script" 
