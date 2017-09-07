@@ -101,18 +101,8 @@ Select: Internationalisation Options
 
 ## Current stage
 
-This project is very early stage. You can edit the ```pigeon.conf``` file to change default configurations and make it more suitable for your needs.
+This project is early stage and I'm looking for contributors. You can edit the ```pigeon.conf``` file to change default configurations and make it more suitable for your needs.
 
-**Some future iteration ideas:**
-
-Software:
-* Create a web interface for management
-* Provide remote access without port forwarding
-* iOS App with push notification
-
-Hardware:
-* Incorporate LEDs that will turn on when motion is detected
-* Incorporate a servo in the design to pan or tilt the camera remotely
 
 ## Movement detected by the first assembled Pigeon (a squirrel)
 ![Squirrer](https://s3-us-west-1.amazonaws.com/allge.us/squirrel.jpg)
@@ -128,4 +118,3 @@ Pigeon is distributed under the GNU GENERAL PUBLIC LICENSE (GPL) version 2 or la
 
 Follow me on [Twitter](http://twitter.com/geraldoramos)
 
-Vote for this project on the [Microcontroller Instructables.com Contest](https://www.instructables.com/id/Pigeon-a-3D-Printed-Cloud-Home-Surveillance-Camera/)
