@@ -8,7 +8,7 @@ echo "Starting Modules Script"
 camera_name=pigeon
 conf_file=/home/pi/pigeon/modules_enabled.conf
 
-for d in modules/*/ ; do
+for d in /home/pi/pigeon/modules/*/ ; do
 
   if [[ $1 == 'install' ]]
     then
