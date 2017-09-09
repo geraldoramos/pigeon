@@ -102,11 +102,12 @@ Select: Internationalisation Options
 
 If you are getting the "Unable to open video device" grey screen, you can try:
 
-Run `sudo modprobe bcm2835-v4l2 `. [More info](https://raspberrypi.stackexchange.com/questions/27737/unable-to-open-video-device-and-grey-screen)
+Run `sudo modprobe bcm2835-v4l2 ` [More info](https://raspberrypi.stackexchange.com/questions/27737/unable-to-open-video-device-and-grey-screen)
 
 **OR**
 
 Install Motion again directly from the repository:
+
 ```wget https://github.com/Motion-Project/motion/releases/download/release-4.0.1/pi_jessie_motion_4.0.1-1_armhf.deb dpkg -i pi_jessie_motion_4.0.1-1_armhf.deb```
 
 
