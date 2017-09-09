@@ -102,7 +102,7 @@ Select: Internationalisation Options
 
 If you are getting the "Unable to open video device" grey screen, you can try:
 
-Run `sudo modprobe bcm2835-v4l2 ` [More info](https://raspberrypi.stackexchange.com/questions/27737/unable-to-open-video-device-and-grey-screen)
+Run the command: `sudo modprobe bcm2835-v4l2 ` [More info](https://raspberrypi.stackexchange.com/questions/27737/unable-to-open-video-device-and-grey-screen)
 
 **OR**
 
