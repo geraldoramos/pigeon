@@ -58,7 +58,6 @@ if [[ $port == "y" ]] || [[ $port == "Y" ]] || [[ $port == "Yes" ]] || [[ $port 
   else
   finalport=8099
   fi
-sudo modprobe bcm2835-v4l2 &&
 sudo motion -c $CONF &&
 echo "=========================="
 echo "Installation completed and service started" &&
