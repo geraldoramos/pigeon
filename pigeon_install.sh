@@ -59,6 +59,7 @@ if [[ $port == "y" ]] || [[ $port == "Y" ]] || [[ $port == "Yes" ]] || [[ $port 
   finalport=8099
   fi
 sudo motion -c $CONF &&
+sudo modprobe bcm2835-v4l2 &&
 echo "=========================="
 echo "Installation completed and service started" &&
 echo "You can add the following command to your 'rc.local' file to run on startup:" &&
